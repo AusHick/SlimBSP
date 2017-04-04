@@ -109,6 +109,7 @@
       <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <Manifest>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -196,6 +197,7 @@ exit 1
       <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <Manifest>
       <SuppressStartupBanner>true</SuppressStartupBanner>
