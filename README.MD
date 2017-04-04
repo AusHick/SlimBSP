@@ -12,6 +12,7 @@ Features
  - Completely standalone from the Source SDK
  - Large address aware binaries
  - Smoothing groups applied to func_details ([tgnottingham](https://github.com/ValveSoftware/source-sdk-2013/pull/391))
+ - Option to disable default cubemaps \[-nodefaultcubemap\] ([wouterpleizier](https://github.com/wouterpleizier/source-sdk-2013/commit/8a102a7b6d6e821bc77925a3df241cfad70876e7))
 
 More Info
 ---------

@@ -43,6 +43,7 @@ qboolean	noshare;
 qboolean	nosubdiv;
 qboolean	notjunc;
 qboolean	noopt;
+qboolean	nodefaultcubemap;
 qboolean	leaktest;
 qboolean	verboseentities;
 qboolean	dumpcollide = false;
@@ -858,8 +859,12 @@ void ProcessModels (void)
 		}
 	}
 
-	// Turn the skybox into a cubemap in case we don't build env_cubemap textures.
-	Cubemap_CreateDefaultCubemaps();
+	if (!nodefaultcubemap)
+	{
+		// Turn the skybox into a cubemap in case we don't build env_cubemap textures.
+		Cubemap_CreateDefaultCubemaps();
+	}
+	
 	EndBSPFile ();
 }
 
@@ -978,6 +983,11 @@ int RunVBSP( int argc, char **argv )
 		{
 			Msg ("nodetail = true\n");
 			nodetail = true;
+		}
+		else if (!Q_stricmp(argv[i], "-nodefaultcubemap"))
+		{
+			Msg ("nodefaultcubemap = true\n");
+			nodefaultcubemap = true;
 		}
 		else if (!Q_stricmp(argv[i], "-fulldetail"))
 		{
@@ -1210,6 +1220,7 @@ int RunVBSP( int argc, char **argv )
 				"  -nomerge     : Don't merge together chopped faces on nodes.\n"
 				"  -nomergewater: Don't merge together chopped faces on water.\n"
 				"  -nosubdiv    : Don't subdivide faces for lightmapping.\n"
+				"  -nodefaultcubemap: Don't generate a default cubemap.\n"
 				"  -micro <#>   : vbsp will warn when brushes are output with a volume less\n"
 				"                 than this number (default: 1.0).\n"
 				"  -fulldetail  : Mark all detail geometry as normal geometry (so all detail\n"
