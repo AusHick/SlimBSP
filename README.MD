@@ -10,7 +10,8 @@ Features
 ----------
 
  - Completely standalone from the Source SDK
- - Large-address
+ - Large address aware binaries
+ - Smoothing groups applied to func_details ([tgnottingham](https://github.com/ValveSoftware/source-sdk-2013/pull/391))
 
 More Info
 ---------
